@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Minimal web-application based on T4 framework</title>
+  <link rel="stylesheet" href="style.css" />
   {{ publishCss() }}
 </head>
 <body>
-{{ foo }} !!!
-{{ app.config.name }}
+
 {% block content %}{% endblock %}
+
 {{ publishJs() }}
 </body>
 </html>

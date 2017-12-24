@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Item;
 use T4\Core\Std;
 use T4\Mvc\Controller;
 
@@ -11,7 +12,12 @@ class Index
 
     public function actionDefault()
     {
-        $this->data->foo = $this->app->config->name;
+        //$this->data->foo = $this->app->config->name;
+        $dat = Item::findByPK(1);
+        $this->data->foo = $dat->news;
+        //echo ($dat->news);
+
+
 
 /*        $this->data->foo = "Приветики!!!";
         $obj = new Std();
