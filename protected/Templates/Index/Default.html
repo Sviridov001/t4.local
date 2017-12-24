@@ -2,13 +2,6 @@
 
 {% block content %}
 
-<div id="header">
-    <!-- Верхняя часть страницы -->
-    <img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
-    <a class="brand" href="#">{{ app.config.name }}</a>
-    <!-- Верхняя часть страницы -->
-</div>
-
 <div id="content">
     <!-- Заголовок -->
     <h1>ЛЕНТА</h1>
@@ -17,35 +10,12 @@
     <p align="right">    Сегодня 23-12-2017     </p>
     <h3>Первая новость</h3>
     <div class="hero-unit">
-        <p>{{ foo }}.</p>
+        <p>{{ foo[1]->news }}.</p>
         <p><a class="btn btn-primary btn-large">Читать дальше... &raquo;</a></p>
     </div>
     <!-- Область основного контента -->
 </div>
-<div id="nav">
-    <!-- Навигация -->
-    <h2>Навигация по сайту</h2>
-    <!-- Меню -->
-    <ul>
-        <li><a href='index.php'>Домой</a>
-        </li>
-        <li><a href='about.php'>О нас</a>
-        </li>
-        <li><a href='contact.php'>Контакты</a>
-        </li>
-        <li><a href='table.php'>Таблица умножения</a>
-        </li>
-        <li><a href='calc.php'>Калькулятор</a>
-        </li>
-    </ul>
-    <!-- Меню -->
-    <!-- Навигация -->
-</div>
-<div id="footer">
-    <!-- Нижняя часть страницы -->
-    &copy; Супер Мега Веб-мастер, 2000 &ndash; 2015
-    <!-- Нижняя часть страницы -->
-</div>
+
 <div class="container">
 
 </div>

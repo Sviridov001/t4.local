@@ -4,12 +4,46 @@
   <meta charset="UTF-8">
   <title>Minimal web-application based on T4 framework</title>
   <link rel="stylesheet" href="style.css" />
+
   {{ publishCss() }}
+
 </head>
 <body>
+<div id="header">
+  <!-- Верхняя часть страницы -->
+  <img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
+  <a class="brand" href="#">{{ app.config.name }}</a>
+  <!-- Верхняя часть страницы -->
+</div>
 
 {% block content %}{% endblock %}
 
+<div id="nav">
+  <!-- Навигация -->
+  <h2>Навигация по сайту</h2>
+  <!-- Меню -->
+  <ul>
+    <li><a href='index.php'>Домой</a>
+    </li>
+    <li><a href='about.php'>О нас</a>
+    </li>
+    <li><a href='contact.php'>Контакты</a>
+    </li>
+    <li><a href='addNews.php'>Добавить новость</a>
+    </li>
+    <li><a href='calc.php'>Калькулятор</a>
+    </li>
+  </ul>
+  <!-- Меню -->
+  <!-- Навигация -->
+</div>
+<div id="footer">
+  <!-- Нижняя часть страницы -->
+  &copy; Супер Мега Веб-мастер, 2000 &ndash; 2017
+  <!-- Нижняя часть страницы -->
+</div>
+
 {{ publishJs() }}
+
 </body>
 </html>

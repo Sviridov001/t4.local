@@ -10,11 +10,29 @@ class Index
     extends Controller
 {
 
-    public function actionDefault()
+    public function actionDefault($body='test')
     {
         //$this->data->foo = $this->app->config->name;
-        $dat = Item::findByPK(1);
-        $this->data->foo = $dat->news;
+
+        $mod = New Item();
+        $mod->news = $body;
+        $mod->autor = 'admin';
+        $mod->date = '23-12-2017';
+        $mod->save();
+
+        $dat = Item::findAll();
+       // $coun = $dat->count();
+
+ //       var_dump($dat);
+/*        foreach ($dat as $key => $value ){
+            var_dump( $key);
+            var_dump( $value);
+            echo "br />\n";
+            echo "***************************************************************";
+        }
+die;*/
+        $this->data->foo[] = $dat;
+      //  $this->data->foo = $dat->news;
         //echo ($dat->news);
 
 
