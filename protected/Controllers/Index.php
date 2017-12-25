@@ -10,33 +10,11 @@ class Index
     extends Controller
 {
 
-    public function actionDefault($body='test')
+    public function actionDefault()
     {
-        //$this->data->foo = $this->app->config->name;
-
-        $mod = New Item();
-        $mod->news = $body;
-        $mod->autor = 'admin';
-        $mod->date = '23-12-2017';
-        $mod->save();
-
         $dat = Item::findAll();
-       // $coun = $dat->count();
-
- //       var_dump($dat);
-/*        foreach ($dat as $key => $value ){
-            var_dump( $key);
-            var_dump( $value);
-            echo "br />\n";
-            echo "***************************************************************";
-        }
-die;*/
-        $this->data->foo[] = $dat;
-      //  $this->data->foo = $dat->news;
-        //echo ($dat->news);
-
-
-
+       // var_dump($dat);
+        $this->data->items = $dat;
 /*        $this->data->foo = "Приветики!!!";
         $obj = new Std();
         echo $this->data->name;
@@ -44,5 +22,17 @@ die;*/
         echo $obj->getData();
         die;*/
     }
+    public function actionAdd($body='test')
+    {
+        //$this->data->foo = $this->app->config->name;
+
+        $mod = New Item();
+        $mod->news = $body;
+        $mod->autor = 'admin';
+        $mod->date = '2017-12-25';
+        $mod->save();
+        $this->redirect('/index');
+    }
+
 
 }

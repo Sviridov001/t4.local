@@ -8,11 +8,12 @@
     <!-- Заголовок -->
     <!-- Область основного контента -->
     <p align="right">    Сегодня 23-12-2017     </p>
-    <h3>Первая новость</h3>
-    <div class="hero-unit">
-        <p>{{ foo[1]->news }}.</p>
-        <p><a class="btn btn-primary btn-large">Читать дальше... &raquo;</a></p>
-    </div>
+    <?php
+        echo '========================';
+    ?>
+    {% for item in items %}
+    <h3>{{ item.news }}</h3>
+    {% endfor %}
     <!-- Область основного контента -->
 </div>
 
