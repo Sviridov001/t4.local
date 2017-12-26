@@ -22,15 +22,22 @@ class Index
         echo $obj->getData();
         die;*/
     }
-    public function actionAdd($body='test')
+    public function actionAdd($article,$body='test')
     {
         //$this->data->foo = $this->app->config->name;
 
         $mod = New Item();
+        $mod->article = $article;
         $mod->news = $body;
         $mod->autor = 'admin';
-        $mod->date = '2017-12-25';
+        $mod->date = date('Y-m-d') ;
         $mod->save();
+        $this->redirect('/index');
+    }
+    public function actionDelete ($id)
+    {
+        $it = Item::findByPK($id);
+        $it->delete();
         $this->redirect('/index');
     }
 

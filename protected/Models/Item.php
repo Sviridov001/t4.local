@@ -13,6 +13,7 @@ class Item extends Model
 {
     static  protected $schema = [
         'columns' => [
+            'article' => ['type' => 'string'],
             'news' => ['type' => 'text'],
             'autor' => ['type' => 'string'],
             'date' => ['type' => 'date'],

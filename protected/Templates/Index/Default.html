@@ -7,12 +7,17 @@
     <h1>ЛЕНТА</h1>
     <!-- Заголовок -->
     <!-- Область основного контента -->
-    <p align="right">    Сегодня 23-12-2017     </p>
-    <?php
-        echo '========================';
-    ?>
+    <p align="right">    Сегодня 23-12-2017</p>
+
     {% for item in items %}
-    <h3>{{ item.news }}</h3>
+    <hr>
+    <p align="right">    Дата: {{ item.date }}</p>
+    <h3>{{ item.article }}</h3>
+    <p>{{ item.news }}</p>
+    <p align="right">    Автор: {{ item.autor }}</p>
+    <a href="/index/delete?id={{item.__id}}">
+       Удалить
+    </a>
     {% endfor %}
     <!-- Область основного контента -->
 </div>
